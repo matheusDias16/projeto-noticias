@@ -1,0 +1,19 @@
+<header>
+  <nav>
+    <img src="../assets/itlean-logo-white 1.png" routerLink="/" alt="">
+    <ul>
+      <li>
+        {{ checkLogin() }}
+      </li>
+      <li routerLink="/login">
+        LOGIN
+      </li>
+    </ul>
+  </nav>
+</header>
+<router-outlet></router-outlet>
+<footer>
+  <a routerLink="/crud">
+    Acessar sistema de administração
+  </a>
+</footer>

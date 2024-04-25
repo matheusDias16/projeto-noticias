@@ -1,0 +1,94 @@
+<section>
+  <div class="contLogin" *ngIf="!isSignUp">
+    <h1>Login</h1>
+
+    <form [formGroup]="formLogin">
+      <div class="contInput">
+        <label>
+          <span>
+            Username
+          </span>
+          <input type="text" formControlName="user">
+        </label>
+      </div>
+
+      <div class="contInput">
+        <label>
+          <span>
+            Senha
+          </span>
+          <input type="password" formControlName="pass">
+        </label>
+      </div>
+    </form>
+
+    <button type="button" (click)="fazLogin()" [disabled]="formLogin.status == 'INVALID'">
+      Entrar
+    </button>
+
+    <h6>
+      Ainda não tem conta? <span (click)="mudaSignUp()">Crie aqui!</span>
+    </h6>
+
+  </div>
+
+  <div class="contSignup" *ngIf="isSignUp">
+    <h1>
+      Sign Up
+    </h1>
+
+    <form [formGroup]="formSignUp">
+
+      <div class="linhaInputs">
+        <div class="contInput">
+          <label>
+            <span>
+              Username
+            </span>
+            <input type="text" formControlName="user">
+          </label>
+        </div>
+
+        <div class="contInput">
+          <label>
+            <span>
+              Nome completo
+            </span>
+            <input type="text" formControlName="nomeCompleto">
+          </label>
+        </div>
+      </div>
+
+      <div class="linhaInputs">
+        <div class="contInput">
+          <label>
+            <span>
+              Senha
+            </span>
+            <input type="password" formControlName="pass">
+          </label>
+        </div>
+
+        <div class="contInput">
+          <label>
+            <span>
+              Confirmar senha
+            </span>
+            <input type="password" formControlName="confirmPass">
+          </label>
+        </div>
+
+      </div>
+
+    </form>
+
+    <button type="button" (click)="criaLogin()" [disabled]="formSignUp.status === 'INVALID' || formSignUp.value.pass != formSignUp.value.confirmPass">
+      Entrar
+    </button>
+
+    <h6>
+      Usar sua conta, <span (click)="mudaSignUp()">Clique aqui!</span>
+    </h6>
+
+  </div>
+</section>

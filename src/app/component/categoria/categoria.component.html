@@ -1,0 +1,12 @@
+<h1>
+    {{ categoria.categoria }}
+  </h1>
+  
+  <div class="noticias">
+  
+    <div class="noticia" *ngFor="let not of noticias" routerLink="/noticia/{{not.id}}">
+      <div class="imagem" [style.backgroundImage]="'url(' + not.imagemPrincipal + ')'"></div>
+      <h3>{{ not.manchete }}</h3>
+    </div>
+  
+  </div>

@@ -1,0 +1,72 @@
+<h1>
+    Admin
+  </h1>
+  
+    <button class="btn" type="button" (click)="abreModal()" ><!---->
+      Criar Categoria
+    </button>
+    <h3 class="cat" routerLink="/crud">
+      Noticias
+    </h3>
+  <div >
+  <table >
+    <tr>
+      <th>
+        Manchete da noticia
+      </th>
+      
+      <th style="width: 100px;"></th>
+      <th style="width: 100px;"></th>
+    </tr>
+    <tr *ngFor="let categ of categorias"><!---->
+      <td>
+        {{categ.categoria}}
+      </td>
+      <td>
+        
+      </td>
+      <td>
+       
+      </td>
+      
+      <td>
+        <button class="bot" type="button" (click)="deletarCategoria( categ.id )" > <!-- -->
+          Deletar Categoria
+        </button>
+      </td>
+    </tr>
+  </table>
+  <div class="modal"  *ngIf="modalAberto">
+
+    <div class="modal-content">
+      <span class="close" (click)="fechaModal()">&times;</span>
+  
+      <h3> 
+        Criar Categoria
+     </h3>
+
+  
+      <form [formGroup]="formularioCategoria">
+  
+        
+
+         <!-- <div>
+          <select formControlName="categoria">
+            <option value="" disabled selected>categoria da noticia</option>
+            <option *ngFor="let categ of categorias" value="{{categ.id}}">{{categ.categoria}}</option>
+          </select>
+        </div> -->
+
+          <div>
+        <input type="text" formControlName="categoria" placeholder="categoria">
+         </div>
+          
+      </form>
+      <button (click)="criaCategoria()">
+           Finalizar Categoria
+      </button>
+  
+    </div>
+    
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<h2 class="categoria">
+  {{ findCategoria( noticia.categoria ) }}
+</h2>
+
+<div class="informacoes">
+  <h1>
+    {{ noticia.manchete }}
+  </h1>
+  <h3>
+    {{ noticia.subtitulo }}
+  </h3>
+  <span> {{ findAutor( noticia.autor ) }} </span><b> - {{ converteHoras(noticia.dataPublicacao) }}</b>
+</div>
+
+<div class="corpoDaNoticia">
+
+  <ng-container *ngFor="let corpo of noticia.corpo">
+    <div *ngIf="corpo.tipo == 'html'">
+      <p [innerHtml]="corpo.informacao"></p>
+    </div>
+    <div *ngIf="corpo.tipo == 'imagem'">
+      <img [src]="corpo.informacao" alt="">
+    </div>
+    <!-- <div *ngIf="corpo.tipo == 'youtube'">
+      {{corpo.informacao}}
+      <iframe width="560" height="315" src="{{corpo.informacao}}"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div> -->
+  </ng-container>
+
+</div>
+
+<div class="comentarios">
+  <h3>
+    Comentarios
+  </h3>
+
+  <div class="comentario" *ngFor="let coment of comentarios">
+    <span>
+      <b>
+        {{ findAutor(coment.autor) }}
+      </b>
+        {{ converteHoras(coment.data) }}
+    </span>
+    <p>
+      {{ coment.texto }}
+    </p>
+  </div>
+</div>

@@ -1,0 +1,151 @@
+.categoria {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .informacoes {
+    padding: 0 45px;
+    margin: 50px 0;
+  
+    h1 {
+      font-family: Inter;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 51px;
+      letter-spacing: 0em;
+      text-align: left;
+    }
+  
+    h3 {
+      font-family: Inter;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 39px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #5B5B5B;
+    }
+  
+    span {
+      font-family: Inter;
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 34px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #2E48FF;
+    }
+  
+    b {
+      font-family: Inter;
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 34px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #000000;
+    }
+  }
+  
+  .corpoDaNoticia {
+    padding: 0 45px;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 34px;
+    letter-spacing: 0em;
+    text-align: left;
+  
+  
+    img {
+      display: block;
+      width: 80%;
+      margin: 25px auto;
+    }
+  }
+  
+  .comentarios {
+    display: block;
+    padding: 0 45px;
+    margin: 50px 0;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+  
+    h3 {
+      font-family: Inter;
+      font-size: 38px;
+      font-weight: 700;
+      line-height: 46px;
+      letter-spacing: 0em;
+      text-align: center;
+  
+    }
+  
+    .comentario {
+      position: relative;
+      border: 2px solid #000000;
+      border-radius: 12px;
+      padding: 12px;
+      
+  
+      span {
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 29px;
+        letter-spacing: 0em;
+        text-align: center;
+  
+        b {
+          font-weight: 600;
+        }
+      }
+  
+      p {
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 27px;
+        letter-spacing: 0em;
+      }
+    }
+  }
+  .outras{
+    h3{
+        font-family: Inter;
+        font-size: 38px;
+        font-weight: 700;
+        line-height: 46px;
+        letter-spacing: 0em;
+        text-align: center;
+    }
+    .categoria{
+        margin: 50px 0;
+      
+        h4{
+          text-align: center;
+        }
+        .noticias{
+          display: flex;
+          flex-direction: row;
+          width: 90%;
+          margin: 30px auto;
+          justify-content: space-between;
+          .noticia{
+            width: 30%;
+            .imagem{
+              width: 100%;
+              background-color: #000;
+              height: 250px;
+            }
+            h5{
+              text-align: center;
+              margin-top: 15px;
+            }
+          }
+        }
+      }
+  }

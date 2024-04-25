@@ -1,0 +1,98 @@
+
+<h1>
+    Admin
+  </h1>
+  
+    <button class="btn" type="button" (click)="abreModal()" ><!---->
+      Cirar <br> Noticia
+    </button>
+    <h3 class="cat" routerLink="/crud-categorias">
+      Categorias
+    </h3>
+ 
+  <div >
+  <table >
+    <tr>
+      <th>
+        Manchete da noticia
+      </th>
+      
+      <th style="width: 100px;"></th>
+      <th style="width: 100px;"></th>
+    </tr>
+    <tr *ngFor="let not of noticias">
+      <td>
+        {{not.manchete}}
+      </td>
+      <td>
+        
+      </td>
+      <td>
+       
+      </td>
+      
+      <td>
+        <button class="bot" type="button" (click)="abreModalEditar(not.id)" > 
+          Editar Noticia
+        </button>
+      <br>
+        <button class="bot" type="button" (click)="deletarNoticia( not.id )"> <!-- -->
+          Deletar Noticia
+        </button>
+      </td>
+    </tr>
+  </table>
+  <div class="modal"  *ngIf="modalAberto">
+
+    <div class="modal-content">
+      <span class="close" (click)="fechaModal()">&times;</span>
+      <h3 *ngIf=" !edicaoNoticia "> 
+        Criação de noticia
+      </h3>
+      <h3 *ngIf="edicaoNoticia"> 
+        Edição de noticia
+      </h3>
+
+  
+      <form [formGroup]="formularioNoticia">
+  
+        <div>
+          <input type="text" formControlName="subtitulo" placeholder="subtitulo">
+        </div>
+  
+        <div>
+          <input type="text" formControlName="manchete" placeholder="manchete da noticia">
+        </div>
+
+         <div>
+          <select formControlName="categoria">
+            <option value="" disabled selected>categoria da noticia</option>
+            <option *ngFor="let categ of categorias" value="{{categ.id}}">{{categ.categoria}}</option>
+          </select>
+        <!-- <input type="text" formControlName="categoria" placeholder="categoria da noticia" > -->
+        </div>
+
+          <div>
+        <input type="text" formControlName="imagemPrincipal" placeholder="imagem">
+         </div>
+
+         <div>
+            <input type="text" formControlName="tipo" placeholder="informacao">
+         </div>
+         
+         <select formControlName="tipo">
+          <option value="" disabled selected>tipo de noticia</option>
+          <option  value="imagem">imagem </option>
+          <option  value="html">html </option>
+        </select>
+          
+      </form>
+      <button type="button"  (click)="finalizarFormulario()">
+        <!-- Se edicaoProduto for true aparece Editar e se for falso aparece Criar -->
+        {{ ( (edicaoNoticia == true) ? 'Editar' : 'Criar' ) }} 
+      </button>
+  
+    </div>
+    
+    </div>
+</div>
